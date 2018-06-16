@@ -10,6 +10,7 @@ define( "DB_PASSWORD", "password" );
 define( "DB_TBL_GENRE", "genre" );
 define( "DB_TBL_MOVIE", "movie" );
 define( "DB_TBL_COMPANY", "company" );
+define( "DB_TBL_COLLECTION", "collection" );
 
 
 define( "CLASS_PATH", "classes" );
