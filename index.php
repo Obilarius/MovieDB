@@ -7,8 +7,8 @@ switch ( $action ) {
   case 'archive':
     archive();
     break;
-  case 'viewArticle':
-    viewArticle();
+  case 'viewAllMovies':
+    viewAllMovies();
     break;
   default:
     homepage();
@@ -35,10 +35,27 @@ function viewArticle() {
   require( TEMPLATE_PATH . "/viewArticle.php" );
 }
 
+function viewAllMovies() {
+  $results = array();
+  $data = Movie::getList(15);
+  $results['movies'] = $data['results'];
+  $results['totalRows'] = $data['totalRows'];
+  $results['pageTitle'] = "Alle Filme";
+
+  switch ( $_GET['view'] ) {
+    case 'list':
+      require( TEMPLATE_PATH . "/allMoviesList.php" );
+      break;
+    default:
+      require( TEMPLATE_PATH . "/allMoviesWall.php" );
+  }
+
+}
+
 function homepage() {
   $results = array();
-  $data = Article::getList( HOMEPAGE_NUM_ARTICLES );
-  $results['articles'] = $data['results'];
+  $data = Movie::getList( HOMEPAGE_NUM_MOVIES );
+  $results['movies'] = $data['results'];
   $results['totalRows'] = $data['totalRows'];
   $results['pageTitle'] = "Widget News";
   require( TEMPLATE_PATH . "/homepage.php" );

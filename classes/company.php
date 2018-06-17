@@ -21,8 +21,8 @@ class Company {
 
 	public function __construct( $data=array() ) {
 		if ( isset( $data['id'] ) ) $this->id = (int) $data['id'];
-		if ( isset( $data['name'] ) ) $this->name = preg_replace ( "/[^\.\,\-\_\'\"\@\?\!\:\$ a-zA-Z0-9()]/", "", $data['name'];
-		if ( isset( $data['description'] ) ) $this->description = preg_replace ( "/[^\.\,\-\_\'\"\@\?\!\:\$ a-zA-Z0-9()]/", "", $data['description'];
+		if ( isset( $data['name'] ) ) $this->name = preg_replace ( "/[^\.\,\-\_\'\"\@\?\!\:\$ a-zA-Z0-9()]/", "", $data['name']);
+		if ( isset( $data['description'] ) ) $this->description = preg_replace ( "/[^\.\,\-\_\'\"\@\?\!\:\$ a-zA-Z0-9()]/", "", $data['description']);
 		if ( isset( $data['logo_path'] ) ) $this->logo_path = $data['logo_path'];
 		if ( isset( $data['homepage'] ) ) $this->homepage = $data['homepage'];
 		if ( isset( $data['headquarters'] ) ) $this->headquarters = $data['headquarters'];
@@ -49,8 +49,8 @@ class Company {
 		$conn = null;
 		if ( $row ) return new company( $row );
 	}
- 
- 
+
+
 	/**
 	* Returns all company objects in the DB
 	*
@@ -93,7 +93,7 @@ class Company {
 
 		// Insert the company
 		$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-		$sql = "INSERT INTO :table ( id, name, description, logo_path, homepage, headquarters, origin_country, parent_company ) 
+		$sql = "INSERT INTO :table ( id, name, description, logo_path, homepage, headquarters, origin_country, parent_company )
 				VALUES ( :id, :name, :description, :logo_path, :homepage, :headquarters, :origin_country, :parent_company )";
 		$st = $conn->prepare ( $sql );
 		$st->bindValue( ":table", DB_TBL_COMPANY, PDO::PARAM_STR );
@@ -122,8 +122,8 @@ class Company {
 
 		// Update the company
 		$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
-		$sql = "UPDATE :table 
-				SET id=:id, name=:name, description=:description, logo_path=:logo_path, homepage=:homepage, headquarters=:headquarters, origin_country=:origin_country, parent_company=:parent_company 
+		$sql = "UPDATE :table
+				SET id=:id, name=:name, description=:description, logo_path=:logo_path, homepage=:homepage, headquarters=:headquarters, origin_country=:origin_country, parent_company=:parent_company
 				WHERE id = :id";
 		$st = $conn->prepare ( $sql );
 		$st->bindValue( ":table", DB_TBL_COMPANY, PDO::PARAM_STR );

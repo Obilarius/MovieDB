@@ -9,13 +9,10 @@ body {
 }
 
 #container {
-  width: 960px;
+  width: 1200px;
   background: #fff;
   margin: 20px auto;
   padding: 20px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
 }
 
 
@@ -113,7 +110,7 @@ form {
   background: #fff4cf;
   border: 1px solid #666;
   -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;  
+  -webkit-border-radius: 5px;
   border-radius: 5px;
   -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
   -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
@@ -164,7 +161,7 @@ input, select, textarea {
 input, textarea, .date {
   border: 2px solid #666;
   -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;    
+  -webkit-border-radius: 5px;
   border-radius: 5px;
   background: #fff;
 }
@@ -190,7 +187,7 @@ textarea {
 textarea#content {
   font-family: "Courier New", courier, fixed;
 }
-  
+
 
 /* Place a border around focused fields */
 
@@ -221,7 +218,7 @@ input[type="submit"] {
   padding: 10px;
   border: 2px solid #7c412b;
   -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;  
+  -webkit-border-radius: 5px;
   border-radius: 5px;
   -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
   -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
@@ -293,7 +290,7 @@ tr:hover {
   margin: 2em 0;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-  border-radius: 5px; 
+  border-radius: 5px;
   -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
   -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
   -box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
@@ -310,4 +307,3 @@ tr:hover {
   border: 1px solid #800;
   color: #fff;
 }
-

@@ -2,20 +2,19 @@
 
       <ul id="headlines">
 
-<?php foreach ( $results['articles'] as $article ) { ?>
+<?php foreach ( $results['movies'] as $movie ) { ?>
 
         <li>
           <h2>
-            <span class="pubDate"><?php echo date('j F', $article->publicationDate)?></span><a href=".?action=viewArticle&amp;articleId=<?php echo $article->id?>"><?php echo htmlspecialchars( $article->title )?></a>
+            <span class="pubDate"><?php echo $movie->id ?></span><a href=".?action=viewArticle&amp;movieId=<?php echo $movie->id?>"><?php echo htmlspecialchars( $movie->title )?></a>
           </h2>
-          <p class="summary"><?php echo htmlspecialchars( $article->summary )?></p>
+          <p class="summary"><?php echo htmlspecialchars( $movie->overview )?></p>
         </li>
 
 <?php } ?>
 
       </ul>
 
-      <p><a href="./?action=archive">Article Archive</a></p>
+      <p><a href="./?action=viewAllMovies">Alle Filme</a></p>
 
 <?php include "templates/include/footer.php" ?>
-

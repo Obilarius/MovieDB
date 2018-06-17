@@ -15,7 +15,7 @@ class Genre {
 
 	public function __construct( $data=array() ) {
     	if ( isset( $data['id'] ) ) $this->id = (int) $data['id'];
-    	if ( isset( $data['name'] ) ) $this->name = preg_replace ( "/[^\.\,\-\_\'\"\@\?\!\:\$ a-zA-Z0-9()]/", "", $data['name'];
+    	if ( isset( $data['name'] ) ) $this->name = preg_replace ( "/[^\.\,\-\_\'\"\@\?\!\:\$ a-zA-Z0-9()]/", "", $data['name']);
 	}
 
 
@@ -37,8 +37,8 @@ class Genre {
 		$conn = null;
 		if ( $row ) return new Genre( $row );
 	}
- 
- 
+
+
 	/**
 	* Returns all Genre objects in the DB
 	*
