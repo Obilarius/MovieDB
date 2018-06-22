@@ -1,92 +1,93 @@
 <?php include "templates/include/header.php" ?>
 
-      <h1>Alle Filme (WALL)</h1>
 
-      <div class="moviewall">
+				<div class="featured-movie">
+					<img class="cover" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/22043/backdrop_ggwxvq_1.jpg" alt="" class="cover" />
+					<p class="corner-title">Staff pick</p>
 
-        <?php foreach ( $results['movies'] as $movie ) { ?>
+					<div class="bottom-bar">
+						<div class="title-container">
+							<span class="fa fa-play-circle"></span>
+							<b>Non-stop</b> Trailer #1
+						</div>
 
-        <a href="#" class="item tilt-poster">
-          <div class="poster" style="background-image: url('<?php echo LOCAL_POSTER_PATH . 'w185' . $movie->poster_path; ?>')">
-            <div class="title"><?php echo $movie->title ?></div>
+						<div class="right">
+							<div class="stars">
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star-half-o"></span>
+								<span class="fa fa-star-o"></span>
+							</div>
+							<div class="share">
+								<icon class="fa fa-share-square"></icon> Share
+							</div>
+						</div> <!-- right -->
+					</div> <!-- bottom bar -->
+				</div> <!-- featured -->
+
+
+				<div class="movie-list">
+					<div class="title-bar">
+						<div class="left">
+							<p class="bold">Popular Trailers</p>
+							<p class="grey">Action / Adventure</p>
+						</div> <!-- left -->
+						<div class="right">
+							<a class="blue" href="#">Rating <i class="fa fa-angle-down"></i></a>
+							<a href="#">Newest</a>
+							<a href="#">Oldest</a>
+						</div> <!-- right -->
+					</div> <!-- title-bar -->
+
+
+          <!-- <div class="poster-wall">
+            <?php #foreach ( $results['movies'] as $movie ) { ?>
+
+            <a href="#" class="item tilt-poster">
+               <div class="poster" style="background-image: url('<?php# echo LOCAL_POSTER_PATH . 'w185' . $movie->poster_path; ?>')">
+                <div class="title"><?php #echo $movie->title ?></div>
+              </div>
+            </a>
+            <?php #} ?>
+          </div> -->
+
+          <div class="poster-wall container">
+            <?php foreach ( $results['movies'] as $movie ) { ?>
+
+            <img class="tilt-poster" src="<?php echo LOCAL_POSTER_PATH . 'w185' . $movie->poster_path; ?>" alt="">
+
+            <?php } ?>
           </div>
 
-        </a>
+					<!-- <a href="#" class="load-more">Show more movies <span class="fa fa-plus"></span></a> -->
 
-      <?php } ?>
+				</div> <!-- movie list -->
 
-      </div>
-
-      <p><?php echo $results['totalRows']?> Film<?php echo ( $results['totalRows'] != 1 ) ? 'e' : '' ?> instgesammt.</p>
-
-      <p><a href="./">Zurück</a></p>
 
 <?php include "templates/include/footer.php" ?>
 
-
 <style>
-  .moviewall {
-    margin: 0 auto;
-    max-width: 1024px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-bottom: 6em;
-    position: relative;
+  .poster-wall {
+    /* display: block; */
+    /* padding: 20px; */
+    /* margin-bottom: 100px; */
   }
-
-  .moviewall .item {
-    margin: 1em;
+  .poster-wall img {
+    /* display: block; */
+    float: left;
+    width: calc( 100% / <?php echo DESIGN_WALL_COL ?> - 2% );
+    margin: 1%;
     text-align: center;
     text-decoration: none;
-    position: relative;
-    box-shadow: 0 10px 25px 0 rgba(0,0,0,0.5);
+    box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.5);
   }
 
-  .moviewall .item .title {
-    color: rgba(255, 255, 255, 0.5);
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    font-size: 1em;
-    font-weight: 300;
-    padding: 30px 0;
-    background: linear-gradient(to top, #000, transparent);
-    text-transform: uppercase;
-    text-align: center;
-    /* opacity: 0; */
-    transition: .5s;
-  }
-
-.moviewall .item:hover {
-    transition: .5s;
-}
-
-.moviewall .item .title:hover {
-  padding-bottom: 50px;
-  opacity: 1;
-  transition: .5s;
-}
-
-  .moviewall .item .poster {
-    width: 185px;
-    height: 278px;
-    background-position: center;
-    background-size: cover;
-    margin-bottom: .5em;
-    box-shadow: 0 10px 17px rgba(0, 0, 0, 0.15);
-  }
-
-  .moviewall .item p {
-    width: 185px;
-    font-size: .9em;
-  }
 </style>
 
 <script type="text/javascript">
-  // $('.tilt-poster').tilt({
-  //   // scale: 1.05,
-  //   perspective: 500
-  // })
+  $('.tilt-poster').tilt({
+    scale: 1.05,
+    perspective: 500
+  })
 </script>

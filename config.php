@@ -28,6 +28,18 @@ define( "LOCAL_BACKDROP_PATH", "img/backdrop/" );
 require( CLASS_PATH . "/movie.php" );
 require( CLASS_PATH . "/genre.php" );
 
+
+# Design
+define( "MEDIA_SM" , "576px" );
+define( "MEDIA_MD" , "768px" );
+define( "MEDIA_LG" , "992px" );
+define( "MEDIA_XL" , "1200px" );
+define( "DESIGN_WALL_COL" , "6" );
+
+
+
+
+
 function handleException( $exception ) {
   echo "Sorry, a problem occurred. Please try later. <br>";
   echo $exception->getMessage();  ### for Debug

@@ -37,7 +37,7 @@ function viewArticle() {
 
 function viewAllMovies() {
   $results = array();
-  $data = Movie::getList(15);
+  $data = Movie::getList(50);
   $results['movies'] = $data['results'];
   $results['totalRows'] = $data['totalRows'];
   $results['pageTitle'] = "Alle Filme";
