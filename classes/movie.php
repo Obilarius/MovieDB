@@ -155,6 +155,59 @@ class Movie
   }
 
   /**
+  * Returns count of Movie objects in the DB
+  *
+  * @return Int|false A Integer Count of Movies in DB
+  */
+
+  public static function getCount() {
+    $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+    $sql = "SELECT count(*)
+            FROM movie";
+
+    $count = $conn->query( $sql )->fetchColumn();
+    $conn = null;
+    return $count;
+  }
+
+  /**
+  * Returns runtime (in Min) of all Movie objects in the DB
+  *
+  * @return Int|false A Integer Number of Runtime in Minutes
+  */
+
+  public static function getRuntimeInMin() {
+    $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+    $sql = "SELECT sum(runtime)
+            FROM movie";
+
+    $runtime = $conn->query( $sql )->fetchColumn();
+    $conn = null;
+    return $runtime;
+  }
+
+  /**
+  * Returns runtime (in days, hours, min) of all Movie objects in the DB
+  *
+  * @return Array|false A tree-element array : d => Days of Runtime; h => Hours of Runtime; m => Minutes of Runtime
+  */
+
+  public static function getRuntimeInDaysHourMin() {
+    $conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
+    $sql = "SELECT sum(runtime)
+            FROM movie";
+
+    $runtime = $conn->query( $sql )->fetchColumn();
+    $conn = null;
+
+    $d = floor($runtime / 1440);
+		$h = floor(($runtime - $d * 1440) / 60);
+	  $m = $runtime - ($d * 1440) - ($h * 60);
+
+    return ( array ( "day" => $d, "hour" => $h, "min" => $m ) );
+  }
+
+  /**
   * Save Poster of the Movie local
   *
   * @param string Posterpath

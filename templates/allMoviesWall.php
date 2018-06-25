@@ -68,26 +68,19 @@
 <?php include "templates/include/footer.php" ?>
 
 <style>
-  .poster-wall {
-    /* display: block; */
-    /* padding: 20px; */
-    /* margin-bottom: 100px; */
-  }
-  .poster-wall img {
-    /* display: block; */
-    float: left;
-    width: calc( 100% / <?php echo DESIGN_WALL_COL ?> - 2% );
-    margin: 1%;
-    text-align: center;
-    text-decoration: none;
-    box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.5);
-  }
-
+.poster-wall {
+	/* display: block; */
+	/* padding: 20px; */
+	/* margin-bottom: 100px; */
+	margin-top: 50px;
+}
+.poster-wall img {
+	/* display: block; */
+	float: left;
+	width: calc( 100% / <?php echo DESIGN_WALL_COL ?> - 1% );
+	margin: 0.5%;
+	text-align: center;
+	text-decoration: none;
+	box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.5);
+}
 </style>
-
-<script type="text/javascript">
-  $('.tilt-poster').tilt({
-    scale: 1.05,
-    perspective: 500
-  })
-</script>

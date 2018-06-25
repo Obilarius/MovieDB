@@ -11,7 +11,7 @@
 	<menu class="menu">
 		<p class="menu-name">Movie trailers</p>
 		<ul>
-			<li class="active">
+			<!-- <li class="active">
 				<a href="#">Action / Adventure</a>
 				<ul>
 					<li><a href="#">Latest</a></li>
@@ -19,7 +19,8 @@
 					<li><a href="#">Coming soon</a></li>
 					<li><a href="#">Staff picks</a></li>
 				</ul>
-			</li>
+			</li> -->
+			<li><a href="#">Action / Adventure</a></li>
 			<li><a href="#">Animation</a></li>
 			<li><a href="#">Comedy</a></li>
 			<li><a href="#">Documentaries</a></li>

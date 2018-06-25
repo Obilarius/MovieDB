@@ -11,12 +11,14 @@
 			<div class="line"></div>
 			<div class="line"></div>
 		</li>
-		<li><a href="#">Headlines</a></li>
-		<li><a href="#">Articles</a></li>
-		<li class="active"><a href="#">Movies & Films</a></li>
-		<li><a href="#">Television</a></li>
-		<li><a href="#">Music</a></li>
-		<li><a href="#">Celebrities</a></li>
+
+		<?php
+		if ($results['pageTitle'] == "Startseite") { echo '<li class="active"><a href="./">Startseite</a></li>'; }
+			else { echo '<li><a href="./">Startseite</a></li>'; }
+		if ($results['pageTitle'] == "Alle Filme") { echo '<li class="active"><a href="./?action=viewAllMovies&view=wall">Alle Filme</a></li>'; }
+			else { echo '<li><a href="./?action=viewAllMovies&view=wall">Alle Filme</a></li>'; }
+		?>
+
 	</ul>
 
 </div> <!-- top bar -->

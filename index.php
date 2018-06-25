@@ -54,10 +54,10 @@ function viewAllMovies() {
 
 function homepage() {
   $results = array();
-  $data = Movie::getList( HOMEPAGE_NUM_MOVIES );
+  $data = Movie::getList( HOMEPAGE_NUM_MOVIES, null, "created_at ASC" );
   $results['movies'] = $data['results'];
   $results['totalRows'] = $data['totalRows'];
-  $results['pageTitle'] = "Widget News";
+  $results['pageTitle'] = "Startseite";
   require( TEMPLATE_PATH . "/homepage.php" );
 }
 
