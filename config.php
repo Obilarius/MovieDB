@@ -27,6 +27,7 @@ define( "LOCAL_BACKDROP_PATH", "img/backdrop/" );
 # Classes
 require( CLASS_PATH . "/movie.php" );
 require( CLASS_PATH . "/genre.php" );
+require( CLASS_PATH . "/company.php" );
 
 
 # Design

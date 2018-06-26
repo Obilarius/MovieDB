@@ -49,17 +49,16 @@ class Genre {
 	public static function getList( $order="name ASC" ) {
 		$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
 		$sql = "SELECT SQL_CALC_FOUND_ROWS *
-		        FROM :table
+		        FROM genre
 		        ORDER BY " . $order;
 
 		$st = $conn->prepare( $sql );
-		$st->bindValue( ":table", DB_TBL_GENRE, PDO::PARAM_STR );
 		$st->execute();
 		$list = array();
 
 		while ( $row = $st->fetch() ) {
-			$article = new Article( $row );
-			$list[] = $article;
+			$genre = new Genre( $row );
+			$list[] = $genre;
 		}
 
 		// Now get the total number of genres that matched the criteria
