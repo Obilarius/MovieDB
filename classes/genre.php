@@ -42,15 +42,15 @@ class Genre {
 	/**
 	* Returns all Genre objects in the DB
 	*
-	* @param string Optional column by which to order the genre (default="name")
+	* @param string Optional column by which to order the genre (default="name ASC")
 	* @return Array|false A two-element array : results => array, a list of Genre objects; totalRows => Total number of articles
 	*/
 
-	public static function getList( $order="name DESC" ) {
+	public static function getList( $order="name ASC" ) {
 		$conn = new PDO( DB_DSN, DB_USERNAME, DB_PASSWORD );
 		$sql = "SELECT SQL_CALC_FOUND_ROWS *
 		        FROM :table
-		        ORDER BY " . mysql_escape_string($order);
+		        ORDER BY " . $order;
 
 		$st = $conn->prepare( $sql );
 		$st->bindValue( ":table", DB_TBL_GENRE, PDO::PARAM_STR );
