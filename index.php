@@ -41,15 +41,7 @@ function viewAllMovies() {
   $results['movies'] = $data['results'];
   $results['totalRows'] = $data['totalRows'];
   $results['pageTitle'] = "Alle Filme";
-
-  switch ( $_GET['view'] ) {
-    case 'list':
-      require( TEMPLATE_PATH . "/allMoviesList.php" );
-      break;
-    default:
-      require( TEMPLATE_PATH . "/allMoviesWall.php" );
-  }
-
+  require( TEMPLATE_PATH . "/allMovies.php" );
 }
 
 function homepage() {

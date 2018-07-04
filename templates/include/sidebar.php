@@ -26,14 +26,6 @@
 					<li><a href="#">Staff picks</a></li>
 				</ul>
 			</li> -->
-			<!-- <li><a href="#">Action / Adventure</a></li>
-			<li><a href="#">Animation</a></li>
-			<li><a href="#">Comedy</a></li>
-			<li><a href="#">Documentaries</a></li>
-			<li><a href="#">Drama</a></li>
-			<li><a href="#">Horror</a></li>
-			<li><a href="#">Sci-Fi  / Fantasy</a></li>
-			<li><a href="#">List A-Z</a></li> -->
 		</ul>
 
 		<div class="separator"></div>

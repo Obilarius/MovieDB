@@ -40,14 +40,14 @@
   <div class="row mainstats">
     <div class="col-sm-4" style="text-align: center">
       <div class="round-icon">
-        <i class="fas fa-film fa-2x fa-inverse"></i>
+        <i class="fal fa-film fa-2x fa-inverse"></i>
 			</div>
       <p class="mainstat-title"><?php echo Movie::getCount(); ?></p>
       <p class="mainstat-label">Filme</p>
     </div>
 		<div class="col-sm-4" style="text-align: center">
       <div class="round-icon">
-        <i class="fas fa-stopwatch fa-2x fa-inverse fa-regular"></i>
+        <i class="fal fa-stopwatch fa-2x fa-inverse"></i>
 			</div>
       <p class="mainstat-title">
 				<?php
@@ -82,8 +82,5 @@
 	text-align: center;
 	text-decoration: none;
 	box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.5);
-}
-.mainstats .fas {
-	font-weight: 200;
 }
 </style>

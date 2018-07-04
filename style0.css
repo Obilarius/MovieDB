@@ -12,7 +12,7 @@ a:hover {
   transition-duration: .05s;
 }
 .window-margin {
-  max-width: 1600px;
+  max-width: 1200px;
   padding: 60px;
   margin: auto;
 }
@@ -220,10 +220,6 @@ a:hover {
   float: left;
   margin-top: 15px;
 }
-.window .main .top-bar .profile-box .login {
-  display: block;
-  float: left;
-}
 .window .main .top-bar .profile-box .arrow {
   float: left;
   margin-left: 10px;
@@ -414,29 +410,4 @@ a:hover {
   .window .main .featured-movie .bottom-bar .title-container {
     font-size: 25px;
   }
-}
-
-.mainstats .round-icon{
-  width: 100px;
-  height: 100px;
-  display: table;
-  text-align: center;
-  border-radius: 50%;
-  margin: 0 auto;
-  background: #24282C;
-  color: #DDD;
-}
-.mainstats .fal, .mainstats .fas {
-  position: relative;
-  display: table-cell;
-  vertical-align: middle;
-}
-.mainstats .mainstat-title {
-  padding-top: 10px;
-  font-size: 1.6em;
-  margin-bottom: -8px;
-}
-.mainstats .mainstat-label {
-  padding-top: 0px;
-  font-size: 1em;
 }
