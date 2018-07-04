@@ -28,6 +28,8 @@ class Movie
   public $vote_average = null;						#float
   public $vote_count = null;							#int
   public $belongs_to_collection = null;		#obj
+  public $created_at = null;              #timestamp
+  public $updated_at = null;              #timestamp
   public $genres = null;									#array
   public $production_companies = null;		#array
   public $production_countries = null;		#array
@@ -65,6 +67,8 @@ class Movie
 		if ( isset( $data['video'] ) ) $this->video = $data['video'];
 		if ( isset( $data['vote_average'] ) ) $this->vote_average = $data['vote_average'];
 		if ( isset( $data['vote_count'] ) ) $this->vote_count = (int) $data['vote_count'];
+    if ( isset( $data['created_at'] ) ) $this->created_at = $data['created_at'];
+    if ( isset( $data['updated_at'] ) ) $this->updated_at = $data['updated_at'];
 
 		if ( isset( $data['belongs_to_collection'] ) ) $this->belongs_to_collection = $data['belongs_to_collection'];
 		if ( isset( $data['genres'] ) ) $this->genres = $data['genres'];

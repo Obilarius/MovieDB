@@ -10,6 +10,9 @@ switch ( $action ) {
   case 'viewAllMovies':
     viewAllMovies();
     break;
+  case 'admin':
+    admin();
+    break;
   default:
     homepage();
 }
@@ -51,6 +54,14 @@ function homepage() {
   $results['totalRows'] = $data['totalRows'];
   $results['pageTitle'] = "Startseite";
   require( TEMPLATE_PATH . "/homepage.php" );
+}
+
+function admin() {
+  $data = Movie::getList(50);
+  $results['movies'] = $data['results'];
+  $results['totalRows'] = $data['totalRows'];
+  $results['pageTitle'] = "Admin";
+  require( TEMPLATE_PATH . "/admin/listMovies.php" );
 }
 
 ?>

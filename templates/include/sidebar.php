@@ -9,7 +9,7 @@
 	</div>
 
 	<menu class="menu">
-		<p class="menu-name">Movie trailers</p>
+		<p class="menu-name">Genres</p>
 		<ul>
 			<?php
 				$genres = Genre::getList("name ASC");
@@ -28,14 +28,14 @@
 			</li> -->
 		</ul>
 
-		<div class="separator"></div>
+		<!-- <div class="separator"></div>
 
 		<ul class="no-bullets">
 			<li><a href="#">Latest news</a></li>
 			<li><a href="#">Critic reviews</a></li>
 			<li><a href="#">Box office</a></li>
 			<li><a href="#">Top 250</a></li>
-		</ul>
+		</ul> -->
 
 		<div class="separator"></div>
 	</menu>

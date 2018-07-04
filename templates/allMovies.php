@@ -60,13 +60,6 @@
 		            	<img class="wall tilt-poster" src="<?php echo LOCAL_POSTER_PATH . 'w185' . $movie->poster_path; ?>" alt="">
 							<?php else: ?>
 									<!-- LIST -->
-					        <!-- <li>
-					          <h2>
-					            <span class="pubDate"><?php echo $movie->id ?></span><a href=".?action=viewArticle&amp;articleId=<?php echo $movie->id?>"><?php echo htmlspecialchars( $movie->title )?></a>
-					          </h2>
-					          <p class="summary"><?php echo htmlspecialchars( $movie->overview )?></p>
-					        </li> -->
-
 									<div class="media">
 									  <div class="media-left">
 											<a href=".?action=viewMovie&amp;movieId=<?php echo $movie->id?>">
@@ -74,7 +67,7 @@
 											</a>
 									  </div>
 									  <div class="media-body media-middle">
-									    <h4 class="media-heading"><?php echo htmlspecialchars( $movie->title )?></h4>
+									    <p class="media-heading"><?php echo htmlspecialchars( $movie->title )?></p>
 									    <p class="media-overview"><?php echo htmlspecialchars( $movie->overview )?></p>
 									  </div>
 									</div>
@@ -119,14 +112,25 @@ a i:hover {
 	border-radius: 5px;
 	overflow: hidden;
 	background-color: rgba(0, 0, 0, 0.05);
+	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.4);
 }
 .media-body{
-  padding-right: 30px;
-	padding-left: 10px;
+	/* padding: 10px 30px 10px 10px; */
 	overflow: hidden;
 }
 img.media-object {
   height: 150px;
+}
+.media-heading {
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px;
+	background: #24282C;
+	color: #DDD;
+}
+.media-overview {
+	font-size: 14px;
+	margin: 10px 30px 10px 10px
 }
 </style>
 
@@ -134,7 +138,7 @@ img.media-object {
 
 jQuery(document).ready(function($) {
 	$(".media-body p").each( function (index, value) {
-		var text = $(value).text().substring(0,297);
+		var text = $(value).text().substring(0,397);
 		$(value).text(text + "…");
 	});
 
