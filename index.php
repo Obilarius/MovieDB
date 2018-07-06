@@ -57,10 +57,10 @@ function homepage() {
 }
 
 function admin() {
-  $data = Movie::getList(50);
+  $data = Movie::getList();
   $results['movies'] = $data['results'];
   $results['totalRows'] = $data['totalRows'];
-  $results['pageTitle'] = "Admin";
+  $results['pageTitle'] = "Administration";
   require( TEMPLATE_PATH . "/admin/listMovies.php" );
 }
 

@@ -42,12 +42,9 @@
 			<div class="line"></div>
 		</li>
 
-		<?php
-		if ($results['pageTitle'] == "Startseite") { echo '<li class="active"><a href="./">Startseite</a></li>'; }
-			else { echo '<li><a href="./">Startseite</a></li>'; }
-		if ($results['pageTitle'] == "Alle Filme") { echo '<li class="active"><a href="./?action=viewAllMovies&view=wall">Alle Filme</a></li>'; }
-			else { echo '<li><a href="./?action=viewAllMovies&view=wall">Alle Filme</a></li>'; }
-		?>
+		<li class=" <?php echo ($results['pageTitle'] == "Startseite"     ? "active" : "") ?> "><a href="./">Startseite</a></li>
+		<li class=" <?php echo ($results['pageTitle'] == "Alle Filme"     ? "active" : "") ?> "><a href="./?action=viewAllMovies&view=wall">Alle Filme</a></li>
+		<li class=" <?php echo ($results['pageTitle'] == "Administration" ? "active" : "") ?> "><a href="./?action=admin">Admin</a></li>
 
 	</ul>
 
